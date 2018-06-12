@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<body background="Images/background.png">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: "Lato", sans-serif;}
+
+.tablink {
+    background-image: url(Images/buttonBG.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: Transparent;
+    background-width: 25%;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 16px 16px;
+    font-size: 17px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    width: 25%;
+    heith: 76pt
+    [COLOR="red"]display: inline-block;[/COLOR]
+}
+
+.tablink:hover {
+    background-image: url(Images/selbuttonBG.png);
+    background-repeat: no-repeat;
+}
+
+/* Style the tab content */
+.tabcontent {
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+</style>
+</head>
+<body>
+<div>
+<button class="tablink" onclick="openCity('App', this)" id="defaultOpen">App</button>
+<button class="tablink" onclick="openCity('Log', this)">Log</button>
+<button class="tablink" onclick="openCity('Updates', this)">Updates</button>
+<button class="tablink" onclick="openCity('About', this)">About</button>
+
+</div>
+<div id="App" class="tabcontent">
+  <h3>OPTC Calendar</h3>
+  <p>Download the app</p>
+  <a href="https://raw.githubusercontent.com/EnkendSw/OPTCCalendarApp/master/app-debug.apk" class="button">Download</a>
+</div>
+    
+<div id="Log" class="tabcontent">
+  <h3>Log</h3>
+  <div>
+    <p>
+        <b>OPTC Calendar 0.0.5</b>
+    </p>
+    <p>
+      -Testing<br>
+    </p>
+  </div>
+</div>
+    
+<div id="Updates" class="tabcontent">
+  <h3>In progress</h3>
+  <div>
+    <p>
+      -AutoUpdates<br>
+      -Insert all fortnights into the DB<br>
+      -Add Snails/Special Events<br>
+      -Add Raids<br>
+      -Add Colosseums<br>
+    </p>
+  </div>
+  <h3>Future updates</h3>
+  <div>
+    <p>
+      -Show calendar in weekly format<br>
+      -Change TimeZone<br>
+      -Manage your own calendar<br>
+      -Show Characters Database<br>
+      -Allow users to rate a FN/Raid/...<br>
+    </p>
+  </div>  
+</div>    
+    
+<div id="About" class="tabcontent">
+  <h3>OPTC Calendar aplication in development</h3>
+  <p>
+    Enkend Software
+    </p>
+</div>
+
+<script>
+function openCity(cityName,elmnt) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(cityName).style.display = "block";
+    
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 
